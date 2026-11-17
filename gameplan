@@ -1,0 +1,20 @@
+gameplan
+classes:
+    Enemy: name, hp, level, damageRange, drops, dropRate
+    NormalEnemy: Enemy...
+    Boss: Enemy..., random prefix suffix??
+    PlayerClass: action(ability), name, hp, resource, weapon, abilities, normalKills, bossKills, recoverHealth()
+    Mage: PlayerClass..., abilities(fireball, frostArmor)
+    Warrior: PlayerClass..., abilities(slash, fortify)
+    Weapon: name, damageRange, type(melee, caster), statIncrease(+dmg/+resource)
+    Armor: name, statIncrease(+hp/resource)
+    Combat: action(choose ability), outcome, stage, normalFight(), bossFight()
+
+    Main: 
+        3 stages
+        1. choose name, choose class
+        2. next stage
+        3. fight 3 normal enemies, get loot(25%), choose 1 or not
+        4. fight boss, get loot(100%) pick weapon or armor
+        5. next stage
+        6. die, print stats
