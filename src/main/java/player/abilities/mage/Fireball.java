@@ -22,6 +22,7 @@ public class Fireball extends Ability {
     public void cast(Enemy target) {
         int min = minDamage + player.getWeapon().getMinDamage();
         int max = maxDamage + player.getWeapon().getMaxDamage();
+        System.out.printf("%s casts fireball on %s%n", player.getName(), target.getName());
         target.takeDamage(RandomGenerator.getDefault().nextInt(min, max + 1));
     }
 

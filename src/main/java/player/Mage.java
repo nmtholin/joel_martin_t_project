@@ -1,5 +1,6 @@
 package player;
 
+import player.abilities.Ability;
 import player.abilities.mage.Fireball;
 import player.abilities.mage.FrostArmor;
 import player.equipment.Weapon;
@@ -16,11 +17,13 @@ public class Mage extends PlayerClass {
         setWeapon(new Weapon(Weapon.WeaponType.CASTER, 1));
     }
 
-    public Fireball fireball() {
+    @Override
+    public Ability getOffensiveAbility() {
         return fireball;
     }
 
-    public FrostArmor frostArmor() {
+    @Override
+    public Ability getDefensiveAbility() {
         return frostArmor;
     }
 

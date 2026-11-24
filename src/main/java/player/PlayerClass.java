@@ -1,5 +1,6 @@
 package player;
 
+import player.abilities.Ability;
 import player.equipment.*;
 
 import java.util.Objects;
@@ -55,6 +56,14 @@ public class PlayerClass {
 
     public int getResourcePoints() {
         return resourcePoints;
+    }
+
+    public Ability getOffensiveAbility() {
+        return null;
+    }
+
+    public Ability getDefensiveAbility() {
+        return null;
     }
 
     public int getNormalKills() {

@@ -27,7 +27,7 @@ public class Enemy {
 
     public void takeDamage(int damage) {
         hp = Math.max(0,hp - damage);
-        System.out.printf("%s takes %d damage", this.name, damage);
+        System.out.printf("%s takes %d damage%n", this.name, damage);
     }
 
     public boolean isAlive() {
