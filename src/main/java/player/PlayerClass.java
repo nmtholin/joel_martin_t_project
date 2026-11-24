@@ -46,6 +46,10 @@ public class PlayerClass {
         resourcePoints -= amount;
     }
 
+    public boolean isAlive() {
+        return healthPoints > 0;
+    }
+
     public String getName() {
         return name;
     }

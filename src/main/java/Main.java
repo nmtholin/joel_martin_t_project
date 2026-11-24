@@ -11,42 +11,62 @@ public class Main {
 
     void main() {
 
-        mainLoop:
-        while (true) {
-
+        try (Scanner scanner = new Scanner(System.in)) {
             int level = 1;
+            System.out.printf("Entering level %d%n", level);
+            mainLoop:
+            while (true) {
 
-            try (Scanner scanner = new Scanner(System.in)) {
                 PlayerClass player = new Mage("mage");
-    //            PlayerClass player = createPlayer(scanner);
+                //            PlayerClass player = createPlayer(scanner);
 
+                Combat combat = new Combat();
+                Enemy enemy = EnemyGenerator.createImp();
+                System.out.printf("You encounter a %s%n", enemy.getName());
+
+                encounterLoop:
                 while (true) {
 
-                    System.out.printf("Entering level %d%n", level);
-                    Combat combat = new Combat();
-                    Enemy enemy = EnemyGenerator.createImp();
-                    System.out.printf("You encounter a %s%n", enemy.getName());
-                    System.out.printf("1. %s%n", player.getOffensiveAbility().getName());
-                    System.out.printf("2. %s%n", player.getDefensiveAbility().getName());
-                    System.out.println("3. Give up");
+                    chooseActionLoop:
+                    while (true) {
 
-                    switch (scanner.nextLine()) {
-                        case "1" -> {
-                            combat.playerAttack(enemy, player.getOffensiveAbility());
-                        }
-                        case "2" -> {
-                            player.getDefensiveAbility().cast();
-                        }
-                        case "3" -> {
-                            break mainLoop;
-                        }
-                        default -> {
-                            System.out.println("Invalid option");
+                        System.out.printf("1. %s%n", player.getOffensiveAbility().getName());
+                        System.out.printf("2. %s%n", player.getDefensiveAbility().getName());
+                        System.out.println("3. Give up");
+                        System.out.print("Choose: ");
+
+                        switch (scanner.nextLine()) {
+                            case "1" -> {
+                                combat.playerAttack(enemy, player.getOffensiveAbility());
+                                break chooseActionLoop;
+                            }
+                            case "2" -> {
+                                player.getDefensiveAbility().cast();
+                                break chooseActionLoop;
+                            }
+                            case "3" -> {
+                                break mainLoop;
+                            }
+                            default -> {
+                                System.out.println("Invalid option");
+                            }
                         }
                     }
 
 
+                    if (enemy.isAlive()) {
+                        combat.enemyAttack(enemy, player);
+                    } else {
+                        turnRecap(player, enemy);
+                        break;
+                    }
 
+                    if (!player.isAlive()) {
+                        System.out.println("You died. Git gud");
+                        break mainLoop;
+                    }
+
+                    turnRecap(player, enemy);
                 }
             }
         }
@@ -84,7 +104,11 @@ public class Main {
     }
 
     public void turnRecap(PlayerClass player, Enemy enemy) {
-        System.out.printf("%s has %d health left%n", enemy.getName(), enemy.getHp());
+        if (!enemy.isAlive()) {
+            System.out.printf("%s has died%n", enemy.getName());
+        } else {
+            System.out.printf("%s has %d health left%n", enemy.getName(), enemy.getHp());
+        }
         System.out.printf("%s has %d health left%n", player.getName(), player.getHealthPoints());
     }
 }
