@@ -1,5 +1,7 @@
 package player;
 
+import player.equipment.Weapon;
+
 import java.util.Objects;
 
 public class PlayerClass {

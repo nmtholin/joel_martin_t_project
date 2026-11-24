@@ -2,6 +2,7 @@ package player;
 
 import player.abilities.mage.Fireball;
 import player.abilities.mage.FrostArmor;
+import player.equipment.Weapon;
 
 public class Mage extends PlayerClass {
 

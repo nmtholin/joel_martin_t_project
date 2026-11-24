@@ -1,5 +1,7 @@
 package player;
 
+import player.equipment.Weapon;
+
 public class Warrior extends PlayerClass {
 
     public Warrior(String name) {
