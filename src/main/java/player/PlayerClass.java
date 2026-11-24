@@ -50,6 +50,10 @@ public class PlayerClass {
         return healthPoints > 0;
     }
 
+    public void godMode() {
+        healthPoints = 10000;
+    }
+
     public String getName() {
         return name;
     }

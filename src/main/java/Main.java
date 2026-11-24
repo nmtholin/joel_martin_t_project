@@ -14,6 +14,7 @@ public class Main {
         try (Scanner scanner = new Scanner(System.in)) {
             int level = 1;
             System.out.printf("Entering level %d%n", level);
+            int enemiesKilled = 0;
             mainLoop:
             while (true) {
 
@@ -21,11 +22,13 @@ public class Main {
                 //            PlayerClass player = createPlayer(scanner);
 
                 Combat combat = new Combat();
-                Enemy enemy = EnemyGenerator.createImp();
+                Enemy enemy = EnemyGenerator.create(level, enemiesKilled);
                 System.out.printf("You encounter a %s%n", enemy.getName());
 
+//                player.godMode();
                 encounterLoop:
                 while (true) {
+
 
                     chooseActionLoop:
                     while (true) {
@@ -57,6 +60,7 @@ public class Main {
                     if (enemy.isAlive()) {
                         combat.enemyAttack(enemy, player);
                     } else {
+                        enemiesKilled++;
                         turnRecap(player, enemy);
                         break;
                     }
@@ -68,6 +72,12 @@ public class Main {
 
                     turnRecap(player, enemy);
                 }
+
+                if (enemiesKilled == 4) {
+                    level++;
+                    enemiesKilled = 0;
+                }
+
             }
         }
 

@@ -2,7 +2,7 @@ package enemy;
 
 public class EnemyGenerator {
 
-    public Enemy create(int level, int killed) {
+    public static Enemy create(int level, int killed) {
         switch (killed) {
             case 0, 1, 2 -> {
                 switch (level) {
