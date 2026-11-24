@@ -1,6 +1,6 @@
 package player;
 
-import player.equipment.Weapon;
+import player.equipment.*;
 
 import java.util.Objects;
 
@@ -15,7 +15,7 @@ public class PlayerClass {
     private int damageReduction;
     private int resourcePoints;
     private Weapon weapon;
-    // private Armor armor;
+    private Armor armor;
     private int normalKills;
     private int bossKills;
     private final ClassType classType;
@@ -80,6 +80,10 @@ public class PlayerClass {
 
     public void setWeapon(Weapon weapon) {
         this.weapon = weapon;
+    }
+
+    public Armor getArmor() {
+        return armor;
     }
 
     public ClassType getClassType() {
