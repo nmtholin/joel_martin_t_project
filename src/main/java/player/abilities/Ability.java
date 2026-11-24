@@ -28,9 +28,9 @@ public class Ability {
 //        target.takeDamage(RandomGenerator.getDefault().nextInt(min, max + 1));
 //    }
 
-    public void cast(Enemy target) {
+    public void cast() {}
 
-    }
+    public void cast(Enemy target) {}
 
     public String getName() {
         return name;

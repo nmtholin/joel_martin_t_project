@@ -17,6 +17,7 @@ public class FrostArmor extends Ability {
         maxDamageReduction = 20;
     }
 
+    @Override
     public void cast() {
         int random = RandomGenerator.getDefault().nextInt(minDamageReduction, maxDamageReduction + 1);
         player.setDamageReduction(random);
