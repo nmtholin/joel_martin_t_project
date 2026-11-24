@@ -1,7 +1,10 @@
 package player.abilities.warrior;
 
+import enemy.Enemy;
 import player.abilities.Ability;
 import player.Warrior;
+
+import java.util.random.RandomGenerator;
 
 public class Slash extends Ability {
 
@@ -14,6 +17,12 @@ public class Slash extends Ability {
         this.player = player;
         minDamage = 5;
         maxDamage = 10;
+    }
+
+    public void cast(Enemy target) {
+        int min = minDamage + player.getWeapon().getMinDamage();
+        int max = maxDamage + player.getWeapon().getMaxDamage();
+        target.takeDamage(RandomGenerator.getDefault().nextInt(min, max + 1));
     }
 
     public int getMaxDamage() {

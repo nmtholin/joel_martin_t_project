@@ -1,8 +1,10 @@
 package player.abilities.mage;
 
-//import Player.Abilities.Ability;
+import enemy.Enemy;
 import player.abilities.Ability;
 import player.Mage;
+
+import java.util.random.RandomGenerator;
 
 public class Fireball extends Ability {
 
@@ -17,11 +19,10 @@ public class Fireball extends Ability {
         maxDamage = 10;
     }
 
-    // Enemy target
-    public void cast(String target) {
+    public void cast(Enemy target) {
         int min = minDamage + player.getWeapon().getMinDamage();
         int max = maxDamage + player.getWeapon().getMaxDamage();
-        // target.damage(RandomGenerator.getDefault().nextInt(min, max + 1));
+        target.takeDamage(RandomGenerator.getDefault().nextInt(min, max + 1));
     }
 
     public int getMaxDamage() {
