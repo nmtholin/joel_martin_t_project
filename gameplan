@@ -1,8 +1,8 @@
 gameplan
 classes:
-    Enemy: name, hp, level, damageRange, drops, dropRate
-    NormalEnemy: Enemy...
-    Boss: Enemy..., random prefix suffix??
+    enemy.Enemy: name, hp, level, damageRange, drops, dropRate
+    enemy.NormalEnemy: enemy.Enemy...
+    enemy.Boss: enemy.Enemy..., random prefix suffix??
     PlayerClass: action(ability), name, hp, resource, weapon, abilities, normalKills, bossKills, recoverHealth()
     Mage: PlayerClass..., abilities(fireball, frostArmor)
     Warrior: PlayerClass..., abilities(slash, fortify)

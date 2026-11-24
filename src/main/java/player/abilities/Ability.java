@@ -1,4 +1,4 @@
-package Player.Abilities;
+package player.abilities;
 
 public class Ability {
 

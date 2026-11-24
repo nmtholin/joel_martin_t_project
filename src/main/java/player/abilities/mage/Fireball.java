@@ -1,8 +1,8 @@
-package Player.Abilities.Mage;
+package player.abilities.mage;
 
 //import Player.Abilities.Ability;
-import Player.Abilities.Ability;
-import Player.Mage;
+import player.abilities.Ability;
+import player.Mage;
 
 public class Fireball extends Ability {
 

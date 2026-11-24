@@ -1,7 +1,7 @@
-package Player.Abilities.Warrior;
+package player.abilities.warrior;
 
-import Player.Abilities.Ability;
-import Player.Warrior;
+import player.abilities.Ability;
+import player.Warrior;
 
 public class DefensiveStance extends Ability {
 

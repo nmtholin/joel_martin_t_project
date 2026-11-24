@@ -1,7 +1,7 @@
-package Player.Abilities.Mage;
+package player.abilities.mage;
 
-import Player.Abilities.Ability;
-import Player.Mage;
+import player.abilities.Ability;
+import player.Mage;
 import java.util.random.RandomGenerator;
 
 public class FrostArmor extends Ability {

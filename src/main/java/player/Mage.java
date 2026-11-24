@@ -1,7 +1,7 @@
-package Player;
+package player;
 
-import Player.Abilities.Mage.Fireball;
-import Player.Abilities.Mage.FrostArmor;
+import player.abilities.mage.Fireball;
+import player.abilities.mage.FrostArmor;
 
 public class Mage extends PlayerClass {
 
