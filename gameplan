@@ -1,8 +1,8 @@
 gameplan
 classes:
-    enemy.Enemy: name, hp, level, damageRange, drops, dropRate
-    enemy.NormalEnemy: enemy.Enemy...
-    enemy.Boss: enemy.Enemy..., random prefix suffix??
+    Enemy: name, hp, level, damageRange, drops, dropRate
+    NormalEnemy: Enemy...
+    Boss: Enemy..., random prefix suffix??
     PlayerClass: action(ability), name, hp, resource, weapon, abilities, normalKills, bossKills, recoverHealth()
     Mage: PlayerClass..., abilities(fireball, frostArmor)
     Warrior: PlayerClass..., abilities(slash, fortify)
@@ -18,3 +18,16 @@ classes:
         4. fight boss, get loot(100%) pick weapon or armor
         5. next stage
         6. die, print stats
+
+
+Todo List:
+Loot
+Main fortsättning
+Winning
+recover health
+bättre info prints
+
+om hinns med:
+Tester
+Javadoc
+
